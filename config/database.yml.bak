@@ -23,8 +23,7 @@ default: &default
 
 development:
   <<: *default
-  database: backitup_dev
-  username: backupify
+  database: backup-ify_development
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -33,7 +32,7 @@ development:
   #username: backup-ify
 
   # The password associated with the postgres role (username).
-  password: <%= ENV['BACKUPIFY_DATABASE_PASSWORD'] %>
+  #password:
 
   # Connect on a TCP socket. Omitted by default since the client uses a
   # domain socket that doesn't need configuration. Windows does not have
@@ -58,9 +57,7 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: backitup_test
-  username: backupify
-  password: <%= ENV['BACKUPIFY_DATABASE_PASSWORD'] %>
+  database: backup-ify_test
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -83,6 +80,6 @@ test:
 #
 production:
   <<: *default
-  database: backitup_prod
-  username: backupify
-  password: <%= ENV['BACKUPIFY_DATABASE_PASSWORD'] %>
+  database: backup-ify_production
+  username: backup-ify
+  password: <%= ENV['BACKUP-IFY_DATABASE_PASSWORD'] %>
